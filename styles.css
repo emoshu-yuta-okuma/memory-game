@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffc6e2;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 18.1rem;
+    height: 26.3rem;
+}
+
+.memory-game {
+    width: 108.85rem;
+    height: 79rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 100rem;
+}
+
+.memory-card {
+    width: calc(100%/6 - 1rem);
+    height: calc(33.333% - 1rem);
+    position: relative;
+    margin: 0.5rem;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    /* transition: transform .5s; */
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 1rem;
+    background-color: #fff;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.back-face {
+    border: solid 4px #000;
+}
+
+/* リスタートボタン */
+#reload {
+    display: block;
+    margin: 0 auto 5rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3.5rem;
+    background-color: transparent;
+    border: solid 4px #000;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#reload:hover {
+    background: #000;
+    color: #fff;
+}
